@@ -166,10 +166,8 @@ curl -X POST http://localhost:5000/api/payments/<ORDER_ID> \
   -H "Authorization: Bearer <TOKEN>"
 ```
 
-## Notes for Presentation / Viva
+## Roadmap Ideas
 
-- **Auth**: JWT is signed with `JWT_SECRET`, sent as `Authorization: Bearer <token>`, verified in `middleware/auth.js`.
-- **Roles**: `customer` (default), `seller` (can list/manage products), `admin` (full access + order management).
-- **Search**: Uses MongoDB's built-in text index (`productSchema.index({ name: 'text', ... })`) — no external search engine needed, good for keeping the demo self-contained.
-- **Order → Payment flow**: Order is created as `pending` (stock is reserved/decremented immediately); calling the payment endpoint marks it `isPaid: true` and moves status to `confirmed`.
-- **Extensible**: Could swap the mock payment controller for Razorpay/Stripe, or add MongoDB Atlas Search / Elasticsearch for more advanced search, without touching the rest of the app.
+- Swap the mock payment controller for a real gateway (Razorpay/Stripe)
+- Add MongoDB Atlas Search or Elasticsearch for more advanced search
+- Add a frontend (React/Next.js) that consumes this API
