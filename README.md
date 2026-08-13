@@ -12,6 +12,10 @@ A complete REST API backend for an Amazon-like e-commerce platform, built with *
 - **Reviews**: One review per user per product, auto-recalculates product's average rating
 - **Payments**: Mock payment endpoint that marks an order as paid (no real gateway — simulates success for demo purposes)
 
+## Tested
+
+The full customer journey has been manually verified end-to-end against a live MongoDB Atlas database using Thunder Client: register → login → browse/search products → add to cart → place order → view order history → pay for order (mock). All endpoints return correct, expected responses.
+
 ## Tech Stack
 
 - Node.js + Express
